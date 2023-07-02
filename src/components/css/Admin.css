@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: #5614B0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DBD65C, #5614B0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DBD65C, #5614B0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+form{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    background-color:whitesmoke;
+    margin-left: 39%;
+    margin-right: 50%;
+    padding-left: 0px;
+    margin-bottom: 60px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+}
+
+tr,th{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    
+    border-collapse: collapse;
+    border-radius: 2px;
+    width: max-content;
+   
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+input,label{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
