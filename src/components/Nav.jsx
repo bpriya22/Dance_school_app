@@ -9,6 +9,7 @@ import STYLE from "./nav.module.css"
 const Navbar = () => {
 let navigate = useNavigate();
   let token =localStorage.getItem("token")
+  let role=localStorage.getItem("role")
 
   let handleLogout=()=>{
     localStorage.clear();
@@ -18,7 +19,7 @@ let navigate = useNavigate();
     <nav>
       <ul>
         <li>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajgX4vPsMzbpV1LyH77GvLxtm2YLntDac-ewI3JoFlg&usqp=CAU&ec=48600113" alt="" height="35px" width="45px"/>
+      
         </li>
         {/* <li>
           <Link to="/">Home</Link>
@@ -41,6 +42,9 @@ let navigate = useNavigate();
                     </li>
             </>
 }
+     {role==="ROLE_ADMIN" ?(
+      <Link to={"/dashboard"} >Admin Dashboard</Link>
+     ):null}
       </ul>
     </nav>
   );

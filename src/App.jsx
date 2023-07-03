@@ -7,6 +7,9 @@ import SignIn from './components/pages/SignIn';
 
 import Register from './components/pages/Register';
 import AdminRegister from './components/pages/AdminRegister';
+import { ProtectedRoutes } from './components/ServicesRoutes/ProtectedRoutes';
+import PublicRoutes from './components/ServicesRoutes/PublicRoutes';
+import { AdminDashboard } from './components/pages/AdminDashboard';
 
 
 const App = () => {
@@ -14,11 +17,12 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route  path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
+        <Route  path="/" element={<ProtectedRoutes><Home/></ProtectedRoutes>} />
+        <Route path="/about" element={<PublicRoutes><About/></PublicRoutes>} />
         < Route path="/register" element={<Register/>}/>
         <Route path="/signin" element={<SignIn/> }/>
         <Route path="/Aregister" element={<AdminRegister/> }/>
+        <Route path="/dashboard" element={<AdminDashboard/>}/>
       </Routes>
     </Router>
   );

@@ -32,7 +32,7 @@ const AdminRegister = () => {
         dob,
         gender,
       }
-      let finalData=await axiosInstance.post("/authenticate",payload)
+      let finalData=await axiosInstance.post("/admins/save",payload)
       console.log(finalData)
       toast.success(("Successfully registered in"), {
         position : toast.POSITION.TOP_CENTER
@@ -123,6 +123,83 @@ const AdminRegister = () => {
 }
 export default AdminRegister
 
+
+
+// import React,  { useState }  from 'react'
+// import { useNavigate } from 'react-router-dom'
+// import axiosInstance from '../Axios/Axiosinstance'
+
+// const AdminRegister = () => {
+
+
+//     let navigate=useNavigate()
+
+//     let [data, setData]=useState({
+//       userName:"",
+//       email:"",
+//       password:"",
+//       phone:"",
+//       gender:"",
+//       dob:""
+//     })
+    
+//     let {userName,email,password,phone,gender,dob}=data
+//     let handleData=(e)=>{
+//       let name=e.target.name
+//       let value=e.target.value
+//       setData({...data,[name]:value})
+//       // console.log(data);
+//     }
+
+//     let handleSubmit=async (e)=>{
+//         e.preventDefault()
+//         console.log(data);
+//         try{
+//           let payload={
+//             userName,
+//             email,
+//             password,
+//             phone,
+//             gender,
+//             dob
+//           }
+//           let finalData= await axiosInstance.post("/admins/save",payload)
+//           console.log(finalData);
+//           alert(`successfully registered with ${email} as admin`)
+//           navigate("/login")
+//         }
+//        catch{
+//         console.log("unable to connect");
+//        }
+//       }
+//   return (
+//     <div>
+//       <form action="">
+//         <fieldset>
+//           <legend>Admin Register</legend>
+//           <input type="text" name="userName" id="userName" value={userName} placeholder='userName' onChange={handleData}/><br /><br />
+//           <input type="email" name="email" id="email" value={email} placeholder='email' onChange={handleData} /><br /><br />
+//           <input type="password" name="password" id="password" value={password} placeholder='password' onChange={handleData}/><br /><br />
+//           <input type="text" name="phone" id="phone" value={phone} placeholder='phone' onChange={handleData} /><br /><br />
+//           <fieldset>
+//             <legend>Gender</legend>
+//             <input type="radio" name="gender" id="male" value="Male" onChange={handleData}/>
+//             <label htmlFor="male">Male</label>
+//             <input type="radio" name="gender" id="female" value="Female" onChange={handleData}/>
+//             <label htmlFor="female">Female</label>
+//             <input type="radio" name="gender" id="other" value="Other" onChange={handleData}/>
+//             <label htmlFor="other">Other</label>
+//           </fieldset><br />
+//           <label htmlFor="dob">date of birth</label><br />
+//           <input type="date" name="dob" id="dob" value={dob} onChange={handleData}/><br />
+//           <button type="submit" onClick={handleSubmit}>Register</button>
+//         </fieldset>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default AdminRegister
 
 
 

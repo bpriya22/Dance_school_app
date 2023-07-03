@@ -85,7 +85,9 @@ const Register = () => {
             <label htmlFor="dob">DOB</label>
             <input type="date" name="dob" id="dob" value={dob}  required onChange={handlestate} />
         <ToastContainer/>
+        
         <button >Sign Up</button>
+      
       </form>
       </article>
     </section>
